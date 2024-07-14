@@ -67,7 +67,7 @@ Vector3(0, 1, 0)] #index 5 top point
 #541
 
 func _init(_color : Color = Color(), _width : float = 0.1, _checker : bool = false) -> void:
-	material.shader = preload("./vector_3d.gdshader")
+	material.shader = preload("vector_3d.gdshader")
 	material.render_priority = 100
 	
 	color = _color

@@ -1,38 +1,38 @@
 @tool
 extends EditorPlugin
 
-const PluginUtils = preload("./utils/plugin_utils.gd")
+const PluginUtils = preload("utils/plugin_utils.gd")
 
 var path := PluginUtils.get_plugin_path("Godot Aerodynamic Physics")
 
 #icons
-const object_icon = preload("./icons/object.svg")
-const node_icon = preload("./icons/node.svg")
-const node2d_icon = preload("./icons/node2d.svg")
-const node3d_icon = preload("./icons/node3d.svg")
-const aerobody3d_icon = preload("./icons/AeroBody3D.svg")
-const aeroinfluencer3d_icon = preload("./icons/AeroInfluencer3D.svg")
-const aerosurface3d_icon = preload("./icons/AeroSurface3D.svg")
-const aeropropeller3d_icon = preload("./icons/AeroPropeller3D.svg")
+const object_icon = preload("icons/object.svg")
+const node_icon = preload("icons/node.svg")
+const node2d_icon = preload("icons/node2d.svg")
+const node3d_icon = preload("icons/node3d.svg")
+const aerobody3d_icon = preload("icons/AeroBody3D.svg")
+const aeroinfluencer3d_icon = preload("icons/AeroInfluencer3D.svg")
+const aerosurface3d_icon = preload("icons/AeroSurface3D.svg")
+const aeropropeller3d_icon = preload("icons/AeroPropeller3D.svg")
 
 #plugin gizmos
-const gizmo_plugin = preload("./core/spatial_gizmo/aero_surface_gizmo.gd")
+const gizmo_plugin = preload("core/spatial_gizmo/aero_surface_gizmo.gd")
 var gizmo_plugin_instance = gizmo_plugin.new()
 
 #nodes
-const aero_body_3d = preload("./core/aero_body_3d.gd")
-const aero_influencer_3d = preload("./core/aero_influencer_3d/aero_influencer_3d.gd")
-const aero_mover_3d = preload("./core/aero_influencer_3d/aero_mover_3d/aero_mover_3d.gd")
-const aero_propeller_3d = preload("./core/aero_influencer_3d/aero_rotator_3d/aero_propeller_3d.gd")
-const aero_variable_propeller_3d = preload("./core/aero_influencer_3d/aero_rotator_3d/aero_variable_propeller_3d.gd")
-const aero_cyclic_propeller_3d = preload("./core/aero_influencer_3d/aero_rotator_3d/aero_cyclic_propeller_3d.gd")
-const aero_surface_3d = preload("./core/aero_influencer_3d/aero_surface_3d/aero_surface_3d.gd")
-const aero_surface_config = preload("./core/aero_influencer_3d/aero_surface_3d/aero_surface_config.gd")
-const manual_aero_surface_3d = preload("./core/aero_influencer_3d/aero_surface_3d/manual_aero_surface_3d/manual_aero_surface_3d.gd")
-const manual_aero_surface_config = preload("./core/aero_influencer_3d/aero_surface_3d/manual_aero_surface_3d/manual_aero_surface_config.gd")
-#const procedural_aero_surface_3d = preload("./core/aero_influencer_3d/aero_surface_3d/procedural_aero_surface_3d/procedural_aero_surface_3d.gd")
-#const procedural_aero_surface_config = preload("./core/aero_influencer_3d/aero_surface_3d/procedural_aero_surface_3d/procedural_aero_surface_config.gd")
-const flight_assist = preload("./core/flight_assist.gd")
+const aero_body_3d = preload("core/aero_body_3d.gd")
+const aero_influencer_3d = preload("core/aero_influencer_3d/aero_influencer_3d.gd")
+const aero_mover_3d = preload("core/aero_influencer_3d/aero_mover_3d/aero_mover_3d.gd")
+const aero_propeller_3d = preload("core/aero_influencer_3d/aero_rotator_3d/aero_propeller_3d.gd")
+const aero_variable_propeller_3d = preload("core/aero_influencer_3d/aero_rotator_3d/aero_variable_propeller_3d.gd")
+const aero_cyclic_propeller_3d = preload("core/aero_influencer_3d/aero_rotator_3d/aero_cyclic_propeller_3d.gd")
+const aero_surface_3d = preload("core/aero_influencer_3d/aero_surface_3d/aero_surface_3d.gd")
+const aero_surface_config = preload("core/aero_influencer_3d/aero_surface_3d/aero_surface_config.gd")
+const manual_aero_surface_3d = preload("core/aero_influencer_3d/aero_surface_3d/manual_aero_surface_3d/manual_aero_surface_3d.gd")
+const manual_aero_surface_config = preload("core/aero_influencer_3d/aero_surface_3d/manual_aero_surface_3d/manual_aero_surface_config.gd")
+#const procedural_aero_surface_3d = preload("core/aero_influencer_3d/aero_surface_3d/procedural_aero_surface_3d/procedural_aero_surface_3d.gd")
+#const procedural_aero_surface_config = preload("core/aero_influencer_3d/aero_surface_3d/procedural_aero_surface_3d/procedural_aero_surface_config.gd")
+const flight_assist = preload("core/flight_assist.gd")
 
 func _enter_tree():
 	ifndef("physics/3d/aerodynamics/substeps", 1)

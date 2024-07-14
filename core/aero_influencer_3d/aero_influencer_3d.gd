@@ -166,6 +166,7 @@ func _update_control_transform(substep_delta : float) -> void:
 	
 	basis = default_transform.basis * Basis().from_euler(total_control_actuation * max_actuation, control_rotation_order)
 
+
 #virtual
 func is_overriding_body_sleep() -> bool:
 	var overriding : bool = false
